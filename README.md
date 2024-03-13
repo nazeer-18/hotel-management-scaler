@@ -31,7 +31,7 @@ Ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/<your-username>/hotel-room-management-spa.git
+git clone https://github.com/nazeer-18/hotel-management-scaler.git
 ```
 
 2. Install the necessary packages:
