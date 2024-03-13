@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Hotel Room Management SPA
 
 This project is a Single Page Application (SPA) designed for the administration of hotel room bookings. It was developed as a part of the assignment for the Scaler internship program. The application facilitates the management of rooms, including booking, viewing, editing, and deleting bookings with comprehensive criteria such as room type, pricing, and user details.
