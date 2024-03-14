@@ -1,24 +1,20 @@
 import React, { useContext } from 'react';
 import Navbar from './components/Navbar';
 import { DarkModeContext } from './context/DarkModeContext';
-import BodyImage from './components/BodyImage';
-import Benifits from './components/Benifits';
-
-import ImageWrapper from './components/ImageWrapper';
+import HomePage from './components/HomePage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className='app'>
+    <BrowserRouter>
       <Navbar />
-      <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
-            <BodyImage></BodyImage>
-            <Benifits></Benifits>
-      </div>
-      <div className="rooms">fghjh eyju</div>
-      <ImageWrapper></ImageWrapper>
-    </div>
+      <Routes>
+        <Route exact path='/' element={<HomePage />}></Route>
+      </Routes>
+    </BrowserRouter>
+
   );
 };
 

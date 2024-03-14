@@ -1,5 +1,5 @@
 import './BodyImage.css';
-export default function Benifits({ selected, onChange }) {
+export default function Benifits() {
     return (
         <div className="container">
             <div className="row">
