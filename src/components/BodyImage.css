@@ -14,6 +14,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px; 
+    margin-top: 10px;
 }
 .image-wrapper {
     width: calc(50% - 5px); 
@@ -41,4 +42,16 @@
 }
 .image-wrapper .img-1{
     height:243px;
+}
+.room-info-container .room-info{
+    font-size:large;
+    font-weight: bold;
+    padding:13px;
+}
+.room-info-container .room-info .avl{
+    font-weight: bold;
+    font-size: xx-large;
+}
+.button-sam{
+    padding:0px auto;
 }

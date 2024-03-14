@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import Navbar from './components/Navbar';
 import { DarkModeContext } from './context/DarkModeContext';
 import BodyImage from './components/BodyImage';
+import Benifits from './components/Benifits';
+
 import ImageWrapper from './components/ImageWrapper';
 
 const App = () => {
@@ -11,7 +13,8 @@ const App = () => {
     <div className='app'>
       <Navbar />
       <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
-        <BodyImage></BodyImage>
+            <BodyImage></BodyImage>
+            <Benifits></Benifits>
       </div>
       <div className="rooms">fghjh eyju</div>
       <ImageWrapper></ImageWrapper>

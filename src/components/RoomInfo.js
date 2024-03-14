@@ -5,7 +5,7 @@ const RoomInfo = ({ roomName, availableRooms }) => {
         <div className="col-lg-4 col-md-6 mb-4">
         <div className="room-info">
             <p>{roomName}</p>
-            <p>{availableRooms}</p>
+            <p className="avl">{availableRooms}</p>
         </div>
         </div>
     );

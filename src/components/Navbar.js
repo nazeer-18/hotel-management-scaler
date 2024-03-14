@@ -7,7 +7,8 @@ const Navbar = () => {
 
     return (
         <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-secondary'}`}>
-            <div className="container-fluid">
+            <div className="container-fluid"> 
+            {/*eslint-disable-next-line*/}
                 <a className="navbar-brand" href="#"><h4>Muntaj Hotel</h4></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -15,9 +16,11 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
+                    {/* eslint-disable-next-line */}
                             <a className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`} href="#">About</a>
                         </li>
                         <li className="nav-item">
+                    {/* eslint-disable-next-line */}
                             <a className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`} href="#">Contact</a>
                         </li>
                     </ul>
