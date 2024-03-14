@@ -39,7 +39,6 @@
 .image-wrapper:hover img {
     transform: scale(1.1); /* Scale the image on hover */
 }
-
 .image-wrapper .img-1{
-    height:243px;    
+    height:243px;
 }
