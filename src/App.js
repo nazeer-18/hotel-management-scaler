@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Navbar from './components/Navbar';
 import { DarkModeContext } from './context/DarkModeContext';
 import BodyImage from './components/BodyImage';
@@ -14,7 +14,7 @@ const App = () => {
         <BodyImage></BodyImage>
       </div>
       <div className="rooms">fghjh eyju</div>
-        <ImageWrapper></ImageWrapper>
+      <ImageWrapper></ImageWrapper>
     </div>
   );
 };
