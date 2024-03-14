@@ -13,19 +13,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px; /* Adjust the spacing between images */
+    gap: 10px; 
 }
 .image-wrapper {
-    width: calc(50% - 5px); /* Set width for images with slight spacing */
-    margin-bottom: 10px; /* Add some space below each image */
+    width: calc(50% - 5px); 
+    margin-bottom: 10px; 
 }
 .image-wrapper img {
-    width: 100%; /* Make images full width */
-    height: auto; /* Keep aspect ratio */
+    width: 100%; 
+    height: auto; 
 }
 @media (max-width: 768px) {
     .image-wrapper {
-      width: 100%; /* Make images full width on mobile */
+        width: 100%; 
     }
 }
 .image-wrapper {
@@ -37,7 +37,7 @@
     transition: transform 0.3s ease;
 }
 .image-wrapper:hover img {
-    transform: scale(1.1); /* Scale the image on hover */
+    transform: scale(1.1); 
 }
 .image-wrapper .img-1{
     height:243px;
