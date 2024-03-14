@@ -1,3 +1,19 @@
 .navbar-nav > li {
     list-style: none;
 }
+
+.nav-item:hover {
+    transform: translateY(-5px); 
+    transition: transform 0.3s ease; 
+}
+
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff; 
+}
+
+body.dark-mode {
+    background-color: #343a40; 
+    color: #ffffff;
+}

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { DarkModeContext } from '../context/DarkModeContext';
-import './Navbar.css'; // Import custom CSS for additional styling
+import './Navbar.css'; // Assuming this CSS file handles your styling
 
 const Navbar = () => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -23,7 +23,7 @@ const Navbar = () => {
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <label className="switch form-check form-switch">
+                            <label className="switch form-check form-switch" title="Toggle dark mode">
                                 <input className="form-check-input" type="checkbox" checked={darkMode} onChange={toggleDarkMode} />
                                 <span className="slider round"></span>
                                 <span className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`}>Dark Mode</span>
