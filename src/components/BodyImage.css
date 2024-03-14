@@ -28,3 +28,18 @@
       width: 100%; /* Make images full width on mobile */
     }
 }
+.image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+.image-container .image-wrapper img{
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.image-wrapper:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+.image-wrapper .img-1{
+    height:243px;    
+}
