@@ -22,8 +22,8 @@ export default function Functionalities() {
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div className="p-4 text-center">
                                     <div className='button-sam'>
-                                        <Link to="/Bookings">
-                                            <button className=" btn btn-primary btn-lg mb-3">Edit Bookings</button>
+                                        <Link to="/DeleteBookings">
+                                            <button className=" btn btn-primary btn-lg mb-3">Delete Bookings</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@ export default function Functionalities() {
                                 <div className="p-4 text-center">
                                     <div className='button-sam'>
                                         <Link to="/Bookings">
-                                            <button className=" btn btn-primary btn-lg mb-3">View Bookings</button>
+                                            <button className=" btn btn-primary btn-lg mb-3">Edit Bookings</button>
                                         </Link>
                                     </div>
                                 </div>

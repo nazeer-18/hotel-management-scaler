@@ -1,12 +1,74 @@
-import React,{useContext} from 'react'
+import React, { useState, useContext } from 'react';
 import { DarkModeContext } from '../context/DarkModeContext';
-export default function Filters() {
-    const { darkMode } = useContext(DarkModeContext);
-    return (
-        <div className={`filters-div p-3 ${darkMode ? 'bg-dark text-light' : 'text-light'}`}>
+import './bookings.css'
+import { Container, Grid, Typography, FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel, TextField, Button } from '@mui/material';
 
-            <h3>Filters</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, non illum quam natus minima, in ea, consectetur maiores nesciunt impedit sit aut hic officiis! Consequuntur fugit, quas dolores voluptate veritatis quia excepturi ipsum quam cum, doloribus deleniti voluptatem a laborum minus porro laboriosam incidunt nulla consequatur et sequi. Qui quis porro aspernatur nihil tenetur rem vero ducimus error a incidunt nulla, voluptas voluptates nisi, at totam minima. Mollitia illum tempore voluptate impedit. Tenetur, voluptas totam expedita excepturi, consequuntur maiores rerum animi explicabo illum molestias, quos quo sapiente accusantium provident in voluptatem aliquam nostrum nesciunt at libero Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aspernatur soluta a nam maxime qui nesciunt eum sapiente, iure odio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, ducimus.
+import Dropdown from 'react-bootstrap/Dropdown';
+
+
+const Filter = () => {
+    const { darkMode } = useContext(DarkModeContext);
+    const [roomType, setRoomType] = useState([]);
+    const [startTime, setStartTime] = useState('');
+    const [endTime, setEndTime] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [roomNumber, setRoomNumber] = useState('');
+    // State to manage dropdown visibility
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Function to toggle dropdown visibility
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    // Function to handle selection
+    const handleSelection = (option) => {
+        console.log("Selected option:", option);
+        // You can perform any action here with the selected option
+        // For example, if you want to close the dropdown after selection:
+        setIsOpen(false);
+    };
+    return (
+        <div className={`p-3 ${darkMode ? 'filters-div' : 'bg-light text-dark'}`}>
+            <div className="parent bg-light p-3">
+                <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        No Option
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>No Option</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        Filter by Room Number and Room Type
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Filter by Room Number and Room Type</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        Filter by Start Time and End Time
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Filter by Start Time and End Time</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        Filter by Start Date and End Date
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Filter by Start Date and End Date</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </div>
         </div>
-    )
-}
+    );
+};
+
+export default Filter;

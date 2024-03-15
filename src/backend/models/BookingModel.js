@@ -48,6 +48,9 @@ const BookingSchema = new mongoose.Schema({
         required: true,
         enum: ['pending', 'paid', 'cancelled'], // Assuming you might want to track these states
         default: 'pending'
+    },
+    room_numbers: {
+        type: [String]
     }
 });
 
