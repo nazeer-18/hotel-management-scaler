@@ -4,6 +4,7 @@ const express = require('express');
 const { ObjectId } = require('mongoose').Types;
 
 const { BookingSchema } = require('./models/BookingModel');
+const {RoomsSchema} = require('./models/RoomsModels');
 
 const mongoURL = "mongodb://localhost:27017/hotelBooking";
 
@@ -24,6 +25,7 @@ const port = 7000;
 app.use(cors());
 
 const Booking = mongoose.model('BookingModel', BookingSchema);
+const Rooms = mongoose.model('RoomsModel',RoomsSchema);
 
 app.get('/fetchBookings', async (req, res) => {
     try {
@@ -56,6 +58,19 @@ app.delete('/deleteBooking/:id', async (req, res) => {
     }
 });
 
+// API endpoint to fetch available rooms
+app.get('/roomsAvailable', async (req, res) => {
+    try {
+        const availableRooms = await Rooms.find({ available: true });
+
+        // Send the available rooms as the response
+        res.json(availableRooms);
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching available rooms:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

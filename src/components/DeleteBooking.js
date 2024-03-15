@@ -100,6 +100,7 @@ const DeleteBooking = () => {
                 if (!confirmed) {
                     return;
                 }
+                //showAlert("Successfully deleted the booking", "success")
             } else {
                 const confirmed = window.confirm(`Are you sure you want to delete this booking? You get No Refund`);
                 if (!confirmed) {

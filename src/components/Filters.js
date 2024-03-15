@@ -1,71 +1,60 @@
 import React, { useState, useContext } from 'react';
-import { DarkModeContext } from '../context/DarkModeContext';
 import './bookings.css'
-import { Container, Grid, Typography, FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel, TextField, Button } from '@mui/material';
-
-import Dropdown from 'react-bootstrap/Dropdown';
 
 
 const Filter = () => {
-    const { darkMode } = useContext(DarkModeContext);
-    const [roomType, setRoomType] = useState([]);
-    const [startTime, setStartTime] = useState('');
-    const [endTime, setEndTime] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [roomNumber, setRoomNumber] = useState('');
-    // State to manage dropdown visibility
-    const [isOpen, setIsOpen] = useState(false);
 
-    // Function to toggle dropdown visibility
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    const [filterByTime, setFilterByTime] = useState(false);
+    const [filterByRooms, setFilterByRooms] = useState(false);
+    const [key, setKey] = useState(0);
+
+    const handleFilterByTime = () => {
+        setFilterByTime(!filterByTime);
     };
 
-    // Function to handle selection
-    const handleSelection = (option) => {
-        console.log("Selected option:", option);
-        // You can perform any action here with the selected option
-        // For example, if you want to close the dropdown after selection:
-        setIsOpen(false);
+    const handleFilterByRoom = () => {
+        setFilterByRooms(!filterByRooms);
     };
+
+    const handleClearAllFilters = () => {
+        setFilterByTime(false);
+        setFilterByRooms(false);
+        setKey(prevKey => prevKey + 1);
+    };
+
     return (
-        <div className={`p-3 ${darkMode ? 'filters-div' : 'bg-light text-dark'}`}>
-            <div className="parent bg-light p-3">
-                <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        No Option
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>No Option</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+        <div key={key} className="p-3 filters-div">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>Filters</h2></div>
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 button-clear"><button className=" mb-3" onClick={handleClearAllFilters}>CLEAR ALL</button></div>
+                </div>
+                <div className="row">
+                    <div className="form-check form-switch">
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            id="filterByTime"
+                            onChange={handleFilterByTime}
+                        />
+                        <label className="form-check-label" htmlFor="filterByTime">
+                            Filter by Time
+                        </label>
+                    </div>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        Filter by Room Number and Room Type
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Filter by Room Number and Room Type</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        Filter by Start Time and End Time
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Filter by Start Time and End Time</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-
-                <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        Filter by Start Date and End Date
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Filter by Start Date and End Date</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                    <div className="form-check form-switch">
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            id="filterByRooms"
+                            onChange={handleFilterByRoom}
+                        />
+                        <label className="form-check-label" htmlFor="filterByRooms">
+                            Filter by Rooms
+                        </label>
+                    </div>
+                    <h3>filters yet to be applied</h3>
+                </div>
             </div>
         </div>
     );
