@@ -13,7 +13,7 @@ const BodyImage = () => {
                     </div>
                     <div className="room-list">
                         <h3>Rooms Available</h3>
-                        <div className="row room-info-container">
+                        <div className="row room-info-container ">
                             <RoomInfo roomName="Basic" availableRooms={20} />
                             <RoomInfo roomName="Luxury" availableRooms={30} />
                             <RoomInfo roomName="Suite" availableRooms={50} />

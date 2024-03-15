@@ -17,3 +17,14 @@ body.dark-mode {
     background-color: #343a40; 
     color: #ffffff;
 }
+
+.round-btn{
+    border-radius: 85%;
+}
+.toggle-btn:hover{
+    transform: none;
+    transition:none;
+}
+.switch{
+    margin: 12%;
+}

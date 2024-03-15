@@ -13,27 +13,39 @@ export default function Functionalities() {
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div className="p-4 text-center">
                                     <div className='button-sam'>
-                                        <Link to="/Bookings">
-                                            <button className=" btn btn-secondary btn-lg mb-3">View Bookings</button>
+                                        <Link to="/ViewBookings">
+                                            <button className=" btn btn-primary btn-lg mb-3">View Bookings</button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div className="p-4 text-center">
-                                    Div 2
+                                    <div className='button-sam'>
+                                        <Link to="/Bookings">
+                                            <button className=" btn btn-primary btn-lg mb-3">Edit Bookings</button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div className="p-4 text-center">
-                                    Div 3
+                                    <div className='button-sam'>
+                                        <Link to="/Bookings">
+                                            <button className=" btn btn-primary btn-lg mb-3">Add Bookings</button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div className="p-4 text-center">
-                                    Div 4
+                                    <div className='button-sam'>
+                                        <Link to="/Bookings">
+                                            <button className=" btn btn-primary btn-lg mb-3">View Bookings</button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

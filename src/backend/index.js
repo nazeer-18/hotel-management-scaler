@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const cors = require('cors');
 const express = require('express');
-const BookingModel = require('./models/BookingModel'); // Assuming the models directory is at the root of your project
+const { BookingSchema } = require('./models/BookingModel');
 
 const mongoURL = "mongodb://localhost:27017/hotelBooking";
 
@@ -18,13 +19,17 @@ connectToMongo();
 
 const app = express();
 const port = 7000;
+app.use(cors());
 
-app.get('/data', (req, res) => {
-    const data = BookingModel(
+const Booking = mongoose.model('BookingModel', BookingSchema);
 
-    )
-    data.save()
-    res.send('Hello World!');
+app.get('/fetchBookings', async (req, res) => {
+    try {
+        const bookings = await Booking.find();
+        res.json(bookings);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 });
 
 app.listen(port, () => {

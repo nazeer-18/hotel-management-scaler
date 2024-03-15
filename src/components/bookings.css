@@ -1,0 +1,12 @@
+.filters-div{
+    background-color: #0f2b3c;
+    color:white;
+}
+.dark-table tbody tr td, .dark-table thead th{
+    background-color: gray;
+    color:white;
+}
+.light-table tbody tr td, .light-table thead th{
+    background-color: #f5f5f5;
+    color:black;
+}

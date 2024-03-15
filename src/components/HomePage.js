@@ -12,7 +12,9 @@ export default function HomePage() {
                 <BodyImage></BodyImage>
                 <Benifits></Benifits>
             </div>
-            <Functionalities></Functionalities>
+            <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+                <Functionalities></Functionalities>
+            </div>
         </div>
 
     )
