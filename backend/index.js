@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 const app = require('express')();
 const http = require('http').Server(app);
+const ObjectId = require('mongodb').ObjectId;
 
 const BookingRecords = require('./models/BookingModel');
 const RoomsModel = require('./models/RoomsModels');
@@ -75,16 +76,13 @@ app.get('/fetchBookings', async (req, res) => {
 
 app.delete('/deleteBooking/:id', async (req, res) => {
     const { id } = req.params;
-    console.log(id)
+    console.log(id.type())
+    const bookingId = ObjectId.createFromHexString(id);
+    console.log("f",bookingId)
     try {
-        const bookingId = ObjectId.isValid(id) ? new ObjectId(id) : null;
 
-        // Check if the ID is valid
-        if (!bookingId) {
-            return res.status(400).json({ message: 'Invalid booking ID' });
-        }
         // Find the booking by ID and delete it
-        const deletedBooking = await BookingRecords.findByIdAndDelete(id);
+        const deletedBooking = await BookingRecords.findByIdAndDelete(bookingId);
         if (!deletedBooking) {
             return res.status(404).json({ message: "Booking not found" });
         }
