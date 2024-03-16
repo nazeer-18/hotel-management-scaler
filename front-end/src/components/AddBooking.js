@@ -1,5 +1,4 @@
-import React, { useState ,useContext} from 'react';
-import { checkAvailableRooms } from '../utilities/RoomAvailability'; // Import your utility function
+import React, { useState, useContext } from 'react';
 import { DarkModeContext } from '../context/DarkModeContext';
 
 const AddBooking = () => {
@@ -32,15 +31,6 @@ const AddBooking = () => {
         setEndDate(event.target.value);
     };
 
-    const handleFetchRooms = async () => {
-        try {
-            const roomsData = await checkAvailableRooms(startDate, endDate); // Call your utility function with start and end dates
-            setAvailableRooms(roomsData);
-        } catch (error) {
-            console.error('Error fetching available rooms:', error);
-        }
-    };
-
     const handleBooking = () => {
         // Your booking logic here
     };
@@ -50,7 +40,7 @@ const AddBooking = () => {
     };
 
     return (
-        <div  className="container mt-5">
+        <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="card p-4 shadow">
@@ -112,7 +102,7 @@ const AddBooking = () => {
                                 />
                             </div>
                             <div>
-                                <button type="button" onClick={handleFetchRooms}>
+                                <button type="button">
                                     Fetch Available Rooms
                                 </button>
 
