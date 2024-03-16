@@ -21,7 +21,7 @@ app.use(cors(
 ));
 
 app.get('/', (req, res) => {
-    res.join("Hello, backend of hotel-management-sclaer")
+    res.json("Hello, backend of hotel-management-sclaer")
 })
 
 
