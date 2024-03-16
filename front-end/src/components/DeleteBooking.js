@@ -110,7 +110,7 @@ const DeleteBooking = () => {
                     return;
                 }
             }
-            await axios.delete(`https://hotel-management-scaler-backend-api.vercel.app/deleteBooking/${selectedBookingId}`);
+            await axios.delete(`https://hotel-management-scaler-backend-api.vercel.app/deleteBooking${selectedBookingId}`);
             setDeletedBookingId(selectedBookingId);
             setSelectedBookingId(null);
             const response = await axios.get('https://hotel-management-scaler-backend-api.vercel.app/fetchBookings');

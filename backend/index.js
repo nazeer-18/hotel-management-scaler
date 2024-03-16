@@ -12,16 +12,18 @@ http.listen(7000, function () {
     console.log('server is running');
 })
 
-app.use(cors(
-    {
-        origin: ["https://hotel-management-scaler-front-end.vercel.app"],
-        methods: ["POST", "GET", "DELETE"],
-        credentials: true
-    }
-));
+app.use(cors());
+
+// Configure CORS headers for all routes
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow access from all origins
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 
 app.get('/', (req, res) => {
-    res.json("Hello, backend of hotel-management-sclaer")
+    res.json("Hello, backend of hotel-management-scaler")
 })
 
 
