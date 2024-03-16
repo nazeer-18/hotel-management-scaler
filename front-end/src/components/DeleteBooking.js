@@ -18,7 +18,7 @@ const DeleteBooking = () => {
 
     const fetchBookings = async () => {
         try {
-            const response = await axios.get('http://localhost:7000/fetchBookings');
+            const response = await axios.get('https://hotel-management-scaler-backend.onrender.com/fetchBookings');
             setBookings(response.data);
         } catch (error) {
             console.error('Error fetching bookings:', error);
@@ -103,10 +103,10 @@ const DeleteBooking = () => {
                     return;
                 }
             }
-            await axios.delete(`http://localhost:7000/deleteBooking/${selectedBookingId}`);
+            await axios.delete(`https://hotel-management-scaler-backend.onrender.com/deleteBooking/${selectedBookingId}`);
             setDeletedBookingId(selectedBookingId);
             setSelectedBookingId(null);
-            const response = await axios.get('http://localhost:7000/fetchBookings');
+            const response = await axios.get('https://hotel-management-scaler-backend.onrender.com/fetchBookings');
             setBookings(response.data);
         } catch (error) {
             console.error('Error deleting booking:', error);
