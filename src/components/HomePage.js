@@ -7,7 +7,7 @@ import { DarkModeContext } from '../context/DarkModeContext';
 export default function HomePage() {
     const { darkMode } = useContext(DarkModeContext);
     return (
-        <div className='app'>
+        <div className='app' >
             <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
                 <BodyImage></BodyImage>
                 <Benifits></Benifits>

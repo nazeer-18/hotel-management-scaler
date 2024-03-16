@@ -8,7 +8,7 @@ const BookingSchema = new mongoose.Schema({
     customer_mobile_number: {
         type: String,
         required: true,
-        unique: true // Assuming this is the primary key, as mentioned before
+        unique: true
     },
     customer_email: {
         type: String,
@@ -36,24 +36,16 @@ const BookingSchema = new mongoose.Schema({
         required: true
     },
     room_types: {
-        type: [String], // Adjusted to support multiple room types as an array of strings
+        type: [String],
         required: true
     },
     total_bill: {
         type: Number,
         required: true
     },
-    payment_status: {
-        type: String,
-        required: true,
-        enum: ['pending', 'paid', 'cancelled'], // Assuming you might want to track these states
-        default: 'pending'
-    },
     room_numbers: {
         type: [String]
     }
 });
 
-const BookingModel = mongoose.model('BookingModel', BookingSchema);
-
-module.exports.BookingModel = BookingSchema;
+module.exports = mongoose.model("BookingRecord", BookingSchema);

@@ -1,42 +1,70 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const cors = require('cors');
-const express = require('express');
-const { ObjectId } = require('mongoose').Types;
+const app = require('express')();
+const http = require('http').Server(app);
 
-const { BookingSchema } = require('./models/BookingModel');
-const {RoomsSchema} = require('./models/RoomsModels');
+const BookingRecords = require('./models/BookingModel');
+const RoomsModel = require('./models/RoomsModels');
 
-const mongoURL = "mongodb://localhost:27017/hotelBooking";
+mongoose.connect("mongodb+srv://hotel-admin:hotelpass@cluster0.uo96854.mongodb.net/model?retryWrites=true&w=majority&appName=Cluster0")
 
-const connectToMongo = () => {
-    mongoose.connect(mongoURL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-        .then(() => console.log('MongoDB connected'))
-        .catch(err => console.log('Failed to connect', err));
-};
+http.listen(7000, function () {
+    console.log('server is running');
+})
 
-// Call connectToMongo to establish database connection
-connectToMongo();
+app.use(cors(
+    {
+        
+    }
+));
 
-const app = express();
-const port = 7000;
-app.use(cors());
 
-const Booking = mongoose.model('BookingModel', BookingSchema);
-const Rooms = mongoose.model('RoomsModel',RoomsSchema);
+app.post('/addBooking', async (req, res) => {
+    try {
+        const {
+            customer_name,
+            customer_mobile_number,
+            customer_email,
+            booking_date,
+            start_date,
+            end_date,
+            start_time,
+            end_time,
+            room_types,
+            total_bill,
+            room_numbers
+        } = req.body;
+
+        const booking = new BookingRecords({
+            customer_name,
+            customer_mobile_number,
+            customer_email,
+            booking_date,
+            start_date,
+            end_date,
+            start_time,
+            end_time,
+            room_types,
+            total_bill,
+            room_numbers
+        });
+
+        const newBooking = await booking.save();
+        res.status(201).json(newBooking);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
 
 app.get('/fetchBookings', async (req, res) => {
     try {
-        const bookings = await Booking.find();
+        const bookings = await BookingRecords.find();
         res.json(bookings);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-// Route to delete a booking by ID
 app.delete('/deleteBooking/:id', async (req, res) => {
     const { id } = req.params;
     console.log(id)
@@ -48,7 +76,7 @@ app.delete('/deleteBooking/:id', async (req, res) => {
             return res.status(400).json({ message: 'Invalid booking ID' });
         }
         // Find the booking by ID and delete it
-        const deletedBooking = await Booking.findByIdAndDelete(id);
+        const deletedBooking = await BookingRecords.findByIdAndDelete(id);
         if (!deletedBooking) {
             return res.status(404).json({ message: "Booking not found" });
         }
@@ -58,19 +86,16 @@ app.delete('/deleteBooking/:id', async (req, res) => {
     }
 });
 
-// API endpoint to fetch available rooms
-app.get('/roomsAvailable', async (req, res) => {
-    try {
-        const availableRooms = await Rooms.find({ available: true });
+// // API endpoint to fetch available rooms
+// app.get('/roomsAvailable', async (req, res) => {
+//     try {
+//         const availableRooms = await Rooms.find({ available: true });
 
-        // Send the available rooms as the response
-        res.json(availableRooms);
-    } catch (error) {
-        // Handle errors
-        console.error('Error fetching available rooms:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-});
+//         // Send the available rooms as the response
+//         res.json(availableRooms);
+//     } catch (error) {
+//         // Handle errors
+//         console.error('Error fetching available rooms:', error);
+//         res.status(500).json({ message: 'Internal server error' });
+//     }
+// });

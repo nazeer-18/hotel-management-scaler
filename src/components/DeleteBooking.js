@@ -124,7 +124,7 @@ const DeleteBooking = () => {
         setSelectedBookingId(bookingId);
     };
     return (
-        <div>
+        <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
             <div className="container ">
                 <h1>Delete Bookings</h1>
                 <Table striped bordered hover className={darkMode ? 'table dark-table' : 'table light-table'}>
@@ -155,7 +155,7 @@ const DeleteBooking = () => {
                                 <td>{filteredBookings.end_time}</td>
                                 <td>{filteredBookings.total_bill}</td>
                                 <td>{filteredBookings.room_types.join(' , ')}</td>
-                                <td>{filteredBookings.room_numbers}</td>
+                                <td>{filteredBookings.room_numbers.join(' , ')}</td>
                                 <td>
                                     <label title="Delete this">
                                         <button className="rounded-button" onClick={() => handleDeleteBooking(filteredBookings)}>

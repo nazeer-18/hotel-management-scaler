@@ -36,7 +36,7 @@ const TableView = ({ pageData }) => {
                         <td>{convertDate(item.end_date)}</td>
                         <td>{item.end_time}</td>
                         <td>{item.room_types.join(' , ')}</td>
-                        <td>{item.room_numbers}</td>
+                        <td>{item.room_numbers.join(' , ')}</td>
                     </tr>
                 ))}
             </tbody>

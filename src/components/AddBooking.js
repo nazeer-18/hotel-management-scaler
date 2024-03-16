@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext} from 'react';
 import { checkAvailableRooms } from '../utilities/RoomAvailability'; // Import your utility function
+import { DarkModeContext } from '../context/DarkModeContext';
 
 const AddBooking = () => {
+    const { darkMode } = useContext(DarkModeContext);
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     const [email, setEmail] = useState('');
@@ -48,7 +50,7 @@ const AddBooking = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div  className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="card p-4 shadow">

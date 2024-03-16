@@ -1,0 +1,182 @@
+[{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45a3"
+  },
+  "customer_name": "Charlie Brown",
+  "customer_mobile_number": "3456789012",
+  "customer_email": "charlie@example.com",
+  "booking_date": "2024-03-17T08:00:00.000Z",
+  "start_date": "2024-03-22T10:00:00.000Z",
+  "end_date": "2024-03-27T14:00:00.000Z",
+  "start_time": "10:00",
+  "end_time": "14:00",
+  "room_types": [
+    "Suite"
+  ],
+  "total_bill": 700,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45a5"
+  },
+  "customer_name": "Emily Davis",
+  "customer_mobile_number": "5678901234",
+  "customer_email": "emily@example.com",
+  "booking_date": "2024-03-19T12:00:00.000Z",
+  "start_date": "2024-03-24T15:00:00.000Z",
+  "end_date": "2024-03-29T09:00:00.000Z",
+  "start_time": "15:00",
+  "end_time": "09:00",
+  "room_types": [
+    "Standard",
+    "Suite"
+  ],
+  "total_bill": 800,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45a9"
+  },
+  "customer_name": "Isabella Anderson",
+  "customer_mobile_number": "9012345678",
+  "customer_email": "isabella@example.com",
+  "booking_date": "2024-03-23T10:00:00.000Z",
+  "start_date": "2024-03-28T12:00:00.000Z",
+  "end_date": "2024-04-02T10:00:00.000Z",
+  "start_time": "12:00",
+  "end_time": "10:00",
+  "room_types": [
+    "Deluxe"
+  ],
+  "total_bill": 500,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45aa"
+  },
+  "customer_name": "Jack Wilson",
+  "customer_mobile_number": "0123456789",
+  "customer_email": "jack@example.com",
+  "booking_date": "2024-03-24T09:00:00.000Z",
+  "start_date": "2024-03-29T14:00:00.000Z",
+  "end_date": "2024-04-03T14:00:00.000Z",
+  "start_time": "14:00",
+  "end_time": "14:00",
+  "room_types": [
+    "Economy"
+  ],
+  "total_bill": 300,
+  "payment_status": "paid"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45ac"
+  },
+  "customer_name": "Lily Moore",
+  "customer_mobile_number": "2468013579",
+  "customer_email": "lily@example.com",
+  "booking_date": "2024-03-26T11:00:00.000Z",
+  "start_date": "2024-03-31T09:00:00.000Z",
+  "end_date": "2024-04-05T10:00:00.000Z",
+  "start_time": "09:00",
+  "end_time": "10:00",
+  "room_types": [
+    "Deluxe"
+  ],
+  "total_bill": 500,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45ad"
+  },
+  "customer_name": "Mason Thompson",
+  "customer_mobile_number": "3579246801",
+  "customer_email": "mason@example.com",
+  "booking_date": "2024-03-27T14:00:00.000Z",
+  "start_date": "2024-04-01T12:00:00.000Z",
+  "end_date": "2024-04-06T12:00:00.000Z",
+  "start_time": "12:00",
+  "end_time": "12:00",
+  "room_types": [
+    "Standard"
+  ],
+  "total_bill": 400,
+  "payment_status": "paid"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45ae"
+  },
+  "customer_name": "Nora Hall",
+  "customer_mobile_number": "4680135792",
+  "customer_email": "nora@example.com",
+  "booking_date": "2024-03-28T12:00:00.000Z",
+  "start_date": "2024-04-02T09:00:00.000Z",
+  "end_date": "2024-04-07T14:00:00.000Z",
+  "start_time": "09:00",
+  "end_time": "14:00",
+  "room_types": [
+    "Economy"
+  ],
+  "total_bill": 300,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45b1"
+  },
+  "customer_name": "Quinn Lewis",
+  "customer_mobile_number": "7924680135",
+  "customer_email": "quinn@example.com",
+  "booking_date": "2024-03-31T09:00:00.000Z",
+  "start_date": "2024-04-05T12:00:00.000Z",
+  "end_date": "2024-04-10T13:00:00.000Z",
+  "start_time": "12:00",
+  "end_time": "13:00",
+  "room_types": [
+    "Economy"
+  ],
+  "total_bill": 300,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f38719ce3366e3dbac45b2"
+  },
+  "customer_name": "Ryan Turner",
+  "customer_mobile_number": "0135792468",
+  "customer_email": "ryan@example.com",
+  "booking_date": "2024-04-01T14:00:00.000Z",
+  "start_date": "2024-04-06T09:00:00.000Z",
+  "end_date": "2024-04-11T14:00:00.000Z",
+  "start_time": "09:00",
+  "end_time": "14:00",
+  "room_types": [
+    "Deluxe",
+    "Suite"
+  ],
+  "total_bill": 800,
+  "payment_status": "pending"
+},
+{
+  "_id": {
+    "$oid": "65f40e37ce3366e3dbac4601"
+  },
+  "customer_name": "Zbxqyp Fhwr",
+  "customer_mobile_number": "9876543210",
+  "customer_email": "zbxqyp.fhwr@example.com",
+  "booking_date": "2024-03-05T08:00:00.000Z",
+  "start_date": "2024-03-15T10:00:00.000Z",
+  "end_date": "2024-03-20T12:00:00.000Z",
+  "start_time": "10:00",
+  "end_time": "12:00",
+  "room_types": [
+    "Economy"
+  ],
+  "total_bill": 300,
+  "payment_status": "pending"
+}]
