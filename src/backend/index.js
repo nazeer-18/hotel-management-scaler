@@ -14,9 +14,13 @@ http.listen(7000, function () {
 
 app.use(cors(
     {
-        
+
     }
 ));
+
+app.get('/', (req, res) => {
+    res.join("Hello, backend of hotel-management-sclaer")
+})
 
 
 app.post('/addBooking', async (req, res) => {
