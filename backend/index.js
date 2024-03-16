@@ -76,9 +76,8 @@ app.get('/fetchBookings', async (req, res) => {
 
 app.delete('/deleteBooking/:id', async (req, res) => {
     const { id } = req.params;
-    console.log(id.type())
-    const bookingId = ObjectId.createFromHexString(id);
-    console.log("f",bookingId)
+    //const bookingId = ObjectId.createFromHexString(id);
+    const bookingId = id;
     try {
 
         // Find the booking by ID and delete it
