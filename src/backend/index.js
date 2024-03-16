@@ -14,7 +14,8 @@ http.listen(7000, function () {
 
 app.use(cors(
     {
-
+        origin: "",
+        methods: ["POST", "GET", "DELETE"],
     }
 ));
 
