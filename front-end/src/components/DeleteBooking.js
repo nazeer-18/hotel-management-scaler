@@ -148,7 +148,10 @@ const DeleteBooking = () => {
                                 <td>{filteredBookings.room_numbers.join(' , ')}</td>
                                 <td>
                                     <label title="Delete this">
-                                        <button className="rounded-button" onClick={() => handleDeleteBooking(filteredBookings)}>
+                                        {/* <button className="rounded-button" onClick={() => handleDeleteBooking(filteredBookings)}>
+                                            <FaTrash /> 
+                                        </button> */}
+                                        <button className="rounded-button">
                                             <FaTrash /> {/* Trash icon */}
                                         </button>
                                     </label>
