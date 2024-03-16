@@ -90,7 +90,8 @@ app.delete('/deleteBooking/:id', async (req, res) => {
         }
         res.json({ message: "Booking deleted successfully", deletedBooking });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.error('Error deleting booking:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 });
 

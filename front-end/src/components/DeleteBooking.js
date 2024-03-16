@@ -80,10 +80,7 @@ const DeleteBooking = () => {
     const filteredBookings = filterFutureBookings(bookings);
     const handleDeleteBooking = async (booking) => {
         const selectedBookingId = booking._id;
-        if (!selectedBookingId) {
-            alert('Please select a booking to delete.');
-            return;
-        }
+        console.log(selectedBookingId);
         try {
             const startTime = booking.start_time;
             const startDate = convertDate(booking.start_date);
@@ -106,11 +103,8 @@ const DeleteBooking = () => {
                 if (!confirmed) {
                     return;
                 }
-                if (!confirmed) {
-                    return;
-                }
             }
-            await axios.delete(`https://hotel-management-scaler-backend-api.vercel.app/deleteBooking${selectedBookingId}`);
+            const deleteBooking = await axios.delete(`https://hotel-management-scaler-backend-api.vercel.app/deleteBooking/${selectedBookingId}`);
             setDeletedBookingId(selectedBookingId);
             setSelectedBookingId(null);
             const response = await axios.get('https://hotel-management-scaler-backend-api.vercel.app/fetchBookings');
@@ -119,9 +113,6 @@ const DeleteBooking = () => {
             console.error('Error deleting booking:', error);
         }
 
-    };
-    const handleRowClick = (bookingId) => {
-        setSelectedBookingId(bookingId);
     };
     return (
         <div className={`p-3 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
@@ -145,7 +136,7 @@ const DeleteBooking = () => {
                     </thead>
                     <tbody>
                         {filteredBookings.map((filteredBookings) => (
-                            <tr key={filteredBookings._id} onClick={() => handleRowClick(filteredBookings._id)} className={selectedBookingId === filteredBookings._id ? 'selected-row' : ''}>
+                            <tr key={filteredBookings._id} className={selectedBookingId === filteredBookings._id ? 'selected-row' : ''}>
                                 <td>{filteredBookings._id}</td>
                                 <td>{filteredBookings.customer_name}</td>
                                 <td>{filteredBookings.customer_mobile_number}</td>
