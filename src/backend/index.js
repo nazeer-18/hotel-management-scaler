@@ -14,7 +14,7 @@ http.listen(7000, function () {
 
 app.use(cors(
     {
-        origin: "",
+        origin: ["https://hotel-management-scaler-front-end.vercel.app/"],
         methods: ["POST", "GET", "DELETE"],
         credentials: true
     }
