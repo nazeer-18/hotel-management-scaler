@@ -15,7 +15,7 @@ const ViewBookings = () => {
 
     const fetchBookings = async () => {
         try {
-            const response = await axios.get('https://hotel-management-scaler.vercel.app/fetchBookings');
+            const response = await axios.get('https://hotel-management-scaler-backend-api.vercel.app/fetchBookings');
             setBookings(response.data);
             //setFilteredBookings(response.data);
         } catch (error) {
